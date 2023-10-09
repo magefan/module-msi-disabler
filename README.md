@@ -26,4 +26,4 @@ php bin/magento setup:static-content:deploy
 ```
 ## Usage
 
-Follow this article ...
+Follow this article on How to [Disable MSI in Magento 2](https://magefan.com/blog/how-to-disable-msi-in-magento-2).
