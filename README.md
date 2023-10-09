@@ -1,1 +1,1 @@
-# Mage2 Module Magefan MsiDisabler
+# Magento 2 Multi-Source Inventory Disabler
