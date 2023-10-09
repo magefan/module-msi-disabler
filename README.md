@@ -1,1 +1,1 @@
-# module-msi-disabler
+# Mage2 Module Magefan MsiDisabler
