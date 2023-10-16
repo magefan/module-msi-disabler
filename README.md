@@ -4,7 +4,7 @@ This module helps to disable MSI in Magento 2 and provides some rewrites to solv
 
 ## Installation Method 1 - Installing via composer
   * Open command line
-  * Using command "cd" navigate to your magento2 root directory
+  * Using command "cd" navigate to your Magento 2 root directory
   * Run the commands:
   
 ```
