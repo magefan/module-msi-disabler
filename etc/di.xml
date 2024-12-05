@@ -13,6 +13,13 @@
 			</argument>
 		</arguments>
 	</type>
+	<type name="Magento\Framework\Console\CommandList">
+		<arguments>
+			<argument name="commands" xsi:type="array">
+				<item name="Enable" xsi:type="object">Magefan\MsiDisabler\Console\Command\Enable</item>
+			</argument>
+		</arguments>
+	</type>
 	<preference for="Magento\InventoryApi\Api\SourceItemRepositoryInterface" type="Magefan\MsiDisabler\Rewrite\Magento\InventoryApi\Api\SourceItemRepositoryInterface"/>
 	<preference for="Magento\InventoryApi\Api\SourceRepositoryInterface" type="Magefan\MsiDisabler\Rewrite\Magento\InventoryApi\Api\SourceRepositoryInterface"/>
 </config>
