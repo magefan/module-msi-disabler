@@ -8,6 +8,7 @@ declare(strict_types=1);
 
 namespace Magefan\MsiDisabler\Rewrite\Magento\InventoryApi\Api;
 
+use Magefan\MsiDisabler\Model\SourceItemSearchResults;
 use Magento\Framework\Api\SearchCriteriaInterface;
 use Magento\InventoryApi\Api\Data\SourceItemSearchResultsInterface;
 
@@ -22,6 +23,9 @@ class SourceItemRepositoryInterface implements \Magento\InventoryApi\Api\SourceI
      */
     public function getList(SearchCriteriaInterface $searchCriteria): SourceItemSearchResultsInterface
     {
-        return [];
+        return (new SourceItemSearchResults())
+            ->setItems([])
+            ->setTotalCount(0)
+            ->setSearchCriteria($searchCriteria);
     }
 }

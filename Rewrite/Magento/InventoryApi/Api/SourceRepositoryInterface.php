@@ -8,7 +8,9 @@ declare(strict_types=1);
 
 namespace Magefan\MsiDisabler\Rewrite\Magento\InventoryApi\Api;
 
+use Magefan\MsiDisabler\Model\SourceSearchResults;
 use Magento\Framework\Api\SearchCriteriaInterface;
+use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\InventoryApi\Api\Data\SourceInterface;
 use Magento\InventoryApi\Api\Data\SourceSearchResultsInterface;
 
@@ -31,14 +33,19 @@ class SourceRepositoryInterface implements \Magento\InventoryApi\Api\SourceRepos
      */
     public function get(string $sourceCode): SourceInterface
     {
-
+        throw new NoSuchEntityException(__('Source with code "%1" does not exist.', $sourceCode));
     }
 
     /**
      * @inheritdoc
      */
-    public function getList(SearchCriteriaInterface $searchCriteria = null): SourceSearchResultsInterface
+    public function getList(?SearchCriteriaInterface $searchCriteria = null): SourceSearchResultsInterface
     {
-        return [];
+        $result = (new SourceSearchResults())->setItems([])->setTotalCount(0);
+        if ($searchCriteria !== null) {
+            $result->setSearchCriteria($searchCriteria);
+        }
+
+        return $result;
     }
 }
