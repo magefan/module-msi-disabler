@@ -24,7 +24,6 @@ class SourceRepositoryInterface implements \Magento\InventoryApi\Api\SourceRepos
      */
     public function save(SourceInterface $source): void
     {
-
     }
 
     /**

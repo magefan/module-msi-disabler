@@ -11,6 +11,7 @@ namespace Magefan\MsiDisabler\Console\Command;
 use Magento\Framework\App\DeploymentConfig\FileReader;
 use Magento\Framework\App\Filesystem\DirectoryList;
 use Magento\Framework\Config\File\ConfigFilePool;
+use Magento\Framework\Console\Cli;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -40,7 +41,11 @@ class Disable extends Command
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
+     *
+     * @param InputInterface $input
+     * @param OutputInterface $output
+     * @return int
      */
     protected function execute(
         InputInterface $input,
@@ -69,11 +74,11 @@ class Disable extends Command
             $output->writeln("All MSI extensions already disabled");
         }
 
-        return 0;
+        return Cli::RETURN_SUCCESS;
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     protected function configure()
     {
