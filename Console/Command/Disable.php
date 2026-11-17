@@ -45,7 +45,7 @@ class Disable extends Command
     protected function execute(
         InputInterface $input,
         OutputInterface $output
-    ) {
+    ): int {
 
         $disabled = 0;
         // Load and modify the existing configuration data

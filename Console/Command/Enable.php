@@ -45,7 +45,7 @@ class Enable extends Command
     protected function execute(
         InputInterface $input,
         OutputInterface $output
-    ) {
+    ): int {
 
         $changed = 0;
         // Load and modify the existing configuration data
