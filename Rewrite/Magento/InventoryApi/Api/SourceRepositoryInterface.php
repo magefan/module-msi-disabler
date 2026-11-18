@@ -9,6 +9,7 @@ declare(strict_types=1);
 namespace Magefan\MsiDisabler\Rewrite\Magento\InventoryApi\Api;
 
 use Magento\Framework\Api\SearchCriteriaInterface;
+use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\InventoryApi\Api\Data\SourceInterface;
 use Magento\InventoryApi\Api\Data\SourceSearchResultsInterface;
 
@@ -23,7 +24,6 @@ class SourceRepositoryInterface implements \Magento\InventoryApi\Api\SourceRepos
      */
     public function save(SourceInterface $source): void
     {
-
     }
 
     /**
@@ -31,13 +31,13 @@ class SourceRepositoryInterface implements \Magento\InventoryApi\Api\SourceRepos
      */
     public function get(string $sourceCode): SourceInterface
     {
-
+        throw NoSuchEntityException::singleField('source_code', $sourceCode);
     }
 
     /**
      * @inheritdoc
      */
-    public function getList(SearchCriteriaInterface $searchCriteria = null): SourceSearchResultsInterface
+    public function getList(?SearchCriteriaInterface $searchCriteria = null): SourceSearchResultsInterface
     {
         return [];
     }
